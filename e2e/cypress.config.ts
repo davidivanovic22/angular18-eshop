@@ -7,11 +7,13 @@ export default defineConfig({
     ...nxE2EPreset(__filename, {
       cypressDir: 'src',
       webServerCommands: {
-        default: 'nx run blogs:serve:development',
-        production: 'nx run blogs:serve:production',
+        default: 'nx run eshop:serve:development',
+        production: 'nx run eshop:serve:production',
       },
-      ciWebServerCommand: 'nx run blogs:serve-static',
+      ciWebServerCommand: 'nx run eshop:serve-static',
     }),
     baseUrl: 'http://localhost:4200',
+    videosFolder: '../dist/cypress/e2e/videos-changed',
+    screenshotsFolder: '../dist/cypress/e2e/screenshots-changed',
   },
 });

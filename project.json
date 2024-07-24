@@ -1,8 +1,8 @@
 {
-  "name": "blogs",
+  "name": "eshop",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "app",
+  "prefix": "eshop",
   "sourceRoot": "./src",
   "tags": [],
   "targets": {
@@ -10,7 +10,7 @@
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/blogs",
+        "outputPath": "dist/eshop",
         "index": "./src/index.html",
         "browser": "./src/main.ts",
         "polyfills": ["zone.js"],
@@ -53,10 +53,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "blogs:build:production"
+          "buildTarget": "eshop:build:production"
         },
         "development": {
-          "buildTarget": "blogs:build:development"
+          "buildTarget": "eshop:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -64,7 +64,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "blogs:build"
+        "buildTarget": "eshop:build"
       }
     },
     "lint": {
@@ -77,15 +77,15 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectName}"],
       "options": {
-        "jestConfig": "jest.config.ts"
+        "jestConfig": "jest.config.app.ts"
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "blogs:build",
+        "buildTarget": "eshop:build",
         "port": 4200,
-        "staticFilePath": "dist/blogs/browser",
+        "staticFilePath": "dist/eshop/browser",
         "spa": true
       }
     }
